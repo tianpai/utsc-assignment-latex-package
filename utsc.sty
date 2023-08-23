@@ -22,11 +22,21 @@
 
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesPackage{utsc-assignments}[2023/06/11 assignments styles]
+\ProvidesPackage{utsc}[2023/06/11 utsc assignments styles]
 
 %%%%%%%%%%%%%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{turingMachines}
-\RequirePackage{hyperref}
+
+\usepackage{amsmath, amssymb, enumitem, amsthm, mathtools}
+\usepackage{algpseudocode, algorithm}
+%%%%%%%%%%%%%%%%%%%%% def                   %%%%%%%
+\def\answer{\textbf{Answer:}\vspace{2mm}}
+\def\bigo{\mathcal{O}}
+
+\def\deci{decidable}
+\def\recog{recognizable}
+\def\unrecog{unrecognizable}
+
+
 %%%%%%%%%%%%%%%%%%%%% commands %%%%%%%%%%%%%%%%%%%%% 
 \newcommand{\assigntitle}[2]{%
     \begin{center}
@@ -37,6 +47,21 @@
         \text{\today}
         \vspace{2mm}
     \end{center}
+}
+
+\newcommand{\question}[1]{
+    \newpage
+    \section*{Question #1}
+}
+
+%mapping reduction
+\newcommand{\mredu}[2]{%
+  \text{#1} $\leq_m \text{#2}
+}
+
+%polytime reduction
+\newcommand{\predu}[2]{%
+  \text{#1} $\leq_p \text{#2}
 }
 
 \makeatother

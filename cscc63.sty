@@ -24,7 +24,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesPackage{turingMachines}[2023/06/11 Turing Machines]
+\ProvidesPackage{cscc63}[2023/06/11 Turing Machines]
 
 \RequirePackage{amsmath, amssymb, enumitem, amsthm, mathtools}
 \RequirePackage{algpseudocode, algorithm}
@@ -37,23 +37,30 @@
 
 \newcommand{\overf}[2]{\encode{#1} \overset{f}\longmapsto \encode{#2} }
 \newcommand{\mapredu}[2]{ #1 \leq_m #2}
+%%%%%%%%%%%%%%%%%%%% Terms
 
+\def\NPC{NP-\textsc{complete}}
+\def\NbyN{n \times n}
+\def\binary{\{0,1\}}
 %%%%%%%%%%%%%%%%%%%% Turing Machiens
 
-\def\Atm{
-    A_{TM} = \{\encode{M,x}|M \text{ accepts } x \}
+\def\universialTM{
+    A_{TM} = \{\encode{M,x}| M \text{ accepts } x \}
 }
 
 \def\halt{
    H = \{ \encode{M,x}|\text{TM $M$ halts on input } x \} 
 }
 
+\def\haltBar{
+    \overline{H} = \{ \encode{M,x}|\text{TM $M$ does not halt on input } x \} 
+}
 
 \def\E{
     E = \{\encode{M}|\lang{M} = \varnothing \}
 }
 
-\def\reg{
+\def\regular{
    REG = \{\encode{M}|\lang{M} \text{ is regular} \} 
 }
 
